@@ -1,0 +1,65 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.container {
+    max-width: 90%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.mat-cell {
+    height: 3.5rem;
+    text-align: center;
+}
+
+mat-toolbar button {
+    margin-right: 5px;
+}
+
+.table-shadow {
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+        0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+        0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+
+    .striped-table {
+        width: 100%;
+        border-collapse: collapse;
+
+        .mat-cell-nodata {
+            text-align: center;
+        }
+
+        .bg-header {
+            background-color: #6b9cd5;
+        }
+
+    }
+}
+
+.mat-mdc-row:nth-child(even) {
+    background-color: #fff;
+}
+
+.mat-mdc-row:nth-child(odd) {
+    background-color: #ccc;
+}
+
+.mat-mdc-row:hover {
+    transition: all .5s ease;
+    font-weight: 500;
+    background-color: #6b9cd5;
+}
+
+.btnProduct {
+    color: #fff;
+}

@@ -1,0 +1,53 @@
+<h1 mat-dialog-title>PRODUCTS FORM</h1>
+<div mat-dialog-content>
+    <form [formGroup]="productForm">
+
+        <mat-form-field appearance="outline" style="margin-top: 10px;">
+            <mat-label>NAME</mat-label>
+            <input formControlName="name" matInput placeholder="NAME">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>CATEGORY</mat-label>
+            <mat-select formControlName="category" placeholder="CATEGORY">
+                <mat-option value="Food and Beverages">Food and Beverages</mat-option>
+                <mat-option value="Clothing and Accessories">Clothing and Accessories</mat-option>
+                <mat-option value="Technology and Electronics">Technology and Electronics</mat-option>
+                <mat-option value="Home and Decoration">Home and Decoration</mat-option>
+                <mat-option value="Health and Beauty">Health and Beauty</mat-option>
+                <mat-option value="Toys and Games">Toys and Games</mat-option>
+                <mat-option value="Sports and Leisure">Sports and Leisure</mat-option>
+                <mat-option value="Books, Music, and Movies">Books, Music, and Movies</mat-option>
+                <mat-option value="Services">Services</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>DATE</mat-label>
+            <input formControlName="date" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-radio-group formControlName="option" appearance="outline">
+            <mat-radio-button *ngFor="let opt of optionList" [value]="opt">
+                {{opt}}
+            </mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field appearance="outline" style="margin-top: 10px;">
+            <mat-label>PRICE</mat-label>
+            <input formControlName="price" matInput type="number" placeholder="PRICE">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>COMMENT</mat-label>
+            <textarea formControlName="comment" matInput></textarea>
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-actions [align]="'end'" style="margin-bottom: 10px;">
+    <button mat-raised-button color="warn" mat-dialog-close>CLOSE</button>
+    <button mat-raised-button color="primary" (click)="save()">{{actionButton}}</button>
+</div>
